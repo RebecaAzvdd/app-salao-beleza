@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Serviços do Salão</h1>
+
+    {% for p in produtos %}
+    <div>
+      <img src="{{ p.imagem.url }}" width="150" />
+      <h3>{{ p.nome }}</h3>
+      <a href="{% url 'produto' p.id %}">Ver mais</a>
+    </div>
+    <hr />
+    {% endfor %}
+  </body>
+</html>
