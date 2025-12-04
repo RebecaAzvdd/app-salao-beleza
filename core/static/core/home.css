@@ -17,7 +17,6 @@ body {
 }
 
 .header .container {
-    width: 100%;
     max-width: 1200px;
     margin: auto;
     display: flex;
@@ -82,7 +81,6 @@ h1 {
     background: #fff;
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0px 4px 14px rgba(0,0,0,0.1);
     transition: 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
@@ -108,7 +106,6 @@ h1 {
 
 .preco {
     font-size: 1.2rem;
-    font-weight: bold;
     color: #8a4a4a;
     margin-bottom: 12px;
 }
@@ -120,8 +117,6 @@ h1 {
     color: white;
     border-radius: 6px;
     text-decoration: none;
-    font-weight: bold;
-    transition: 0.2s;
 }
 
 .btn-vermais:hover {
@@ -161,14 +156,12 @@ h1 {
     height: 22px;
     margin-right: 8px;
     vertical-align: middle;
-
     filter: brightness(0) invert(1);
 }
 
 .social-icon img {
     width: 32px;
     margin-right: 10px;
-    transition: .2s;
     filter: brightness(0) invert(1);
 }
 
@@ -182,26 +175,4 @@ h1 {
     border-top: 1px solid #ffffff55;
     padding-top: 15px;
     font-size: 0.9rem;
-}
-
-@media (max-width: 900px) {
-    .servicos-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .servicos-grid {
-        grid-template-columns: 1fr;
-    }
-    .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    .social-icon img {
-        margin: 0 5px;
-    }
 }

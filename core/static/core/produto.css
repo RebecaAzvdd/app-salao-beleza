@@ -17,7 +17,6 @@ body {
 }
 
 .header .container {
-    width: 100%;
     max-width: 1200px;
     margin: auto;
     display: flex;
@@ -49,70 +48,56 @@ body {
 }
 
 .produto-container {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    border-radius: 15px;
-    background: #fff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    text-align: center;
-    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    margin: 50px auto;
 }
 
-.produto-container h1 {
-    font-size: 2.2rem;
-    color: #3b2f2f;
-    margin-bottom: 20px;
+.produto-imagem img {
+    width: 400px;
+    border-radius: 20px;
+    display: block;
 }
 
-.produto-container img {
-    width: 280px;
-    height: 280px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+.produto-info {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 30px; 
 }
 
-.produto-container p {
+.produto-info h1 {
+    font-size: 2rem;
+    color: #8a4a4a;
+}
+
+.produto-info .produto-descricao {
     font-size: 1.1rem;
     line-height: 1.6;
-    color: #444;
-    margin-bottom: 25px;
-    padding: 0 10px;
+    color: #000000;
 }
 
-/* Botão Agendar */
-.btn-agendar {
+.produto-info .produto-valor {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #8a4a4a;
+}
+
+.produto-info a {
     display: inline-block;
-    padding: 12px 20px;
+    text-decoration: none;
     background-color: #df8f8f;
     color: #fff;
-    text-decoration: none;
-    font-size: 1.1rem;
-    border-radius: 8px;
-    transition: .3s ease;
+    padding: 12px 25px;
+    border-radius: 5px;
+    width: max-content;
+    margin-top: 10px;
 }
 
-.btn-agendar:hover {
+.produto-info a:hover {
     background-color: #c67171;
-    transform: translateY(-2px);
-}
-
-/* Responsivo */
-@media (max-width: 500px) {
-    .produto-container img {
-        width: 200px;
-        height: 200px;
-    }
-
-    .produto-container h1 {
-        font-size: 1.8rem;
-    }
-
-    .produto-container p {
-        font-size: 1rem;
-    }
 }
 
 .footer {
@@ -148,15 +133,12 @@ body {
     height: 22px;
     margin-right: 8px;
     vertical-align: middle;
-
     filter: brightness(0) invert(1);
 }
 
 .social-icon img {
     width: 32px;
     margin-right: 10px;
-    transition: .2s;
-    filter: brightness(0) invert(1);
 }
 
 .social-icon img:hover {
@@ -170,4 +152,3 @@ body {
     padding-top: 15px;
     font-size: 0.9rem;
 }
-

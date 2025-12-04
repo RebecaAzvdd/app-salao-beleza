@@ -1,16 +1,90 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'core/produto.css' %}">
   </head>
   <body>
-    <h1>{{ produto.nome }}</h1>
-    <img src="{{ produto.imagem.url }}" width="250" />
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Salão de Beleza</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="{% url 'home' %}#home">Início</a></li>
+                    <li><a href="{% url 'home' %}#servicos">Serviços</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Container do produto -->
+    <div class="produto-container">
+        <div class="produto-imagem">
+            <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}">
+        </div>
+        <div class="produto-info">
+            <h1>{{ produto.nome }}</h1>
+            <p class="produto-descricao">{{ produto.descricao }}</p>
+            <p class="produto-valor">Valor: R$ {{ produto.preco }}</p>
+            <a href="{% url 'agendar' produto.id %}">Agendar</a>
+        </div>
+    </div>
 
-    <p>{{ produto.descricao }}</p>
 
-    <a href="{% url 'agendar' produto.id %}">Agendar</a>
+    <footer class="footer" id="contato">
+        <div class="footer-grid">
+
+            <div>
+                <h4>Salão de Beleza</h4>
+                <p>Seu lugar de transformação e beleza</p>
+            </div>
+
+            <div>
+                <h4>Contato</h4>
+                <p>
+                    <img src="{% static 'img/telefone.png' %}" class="icon-img" alt="Telefone">
+                    (81) 91234-5678
+                </p>
+                <p>
+                    <img src="{% static 'img/email.png' %}" class="icon-img" alt="E-mail">
+                    contato@salao.com.br
+                </p>
+                <p>
+                    <img src="{% static 'img/localizacao.png' %}" class="icon-img" alt="Endereço">
+                    Rua da Beleza, 123
+                </p>
+            </div>
+
+            <div>
+                <h4>Horários</h4>
+                <p>Seg–Sex: 9h–19h</p>
+                <p>Sábado: 9h–17h</p>
+                <p>Domingo: Fechado</p>
+            </div>
+
+            <div>
+                <h4>Redes Sociais</h4>
+                <a href="#" class="social-icon">
+                    <img src="{% static 'img/instagram.png' %}" class="icon-img" alt="Instagram">
+                </a>
+                <a href="#" class="social-icon">
+                    <img src="{% static 'img/facebook.png' %}" class="icon-img" alt="Facebook">
+                </a>
+                <a href="#" class="social-icon">
+                    <img src="{% static 'img/whatsapp.png' %}" class="icon-img" alt="WhatsApp">
+                </a>
+            </div>
+
+        </div>
+
+        <p class="footer-bottom">
+            &copy; 2025 Salão de Beleza. Todos os direitos reservados.
+        </p>
+    </footer>
   </body>
 </html>
