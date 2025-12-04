@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #faf7f5;
+    color: #333;
+}
+
+.header {
+    background: #ffffff;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.1);
+    padding: 55px 0;
+}
+
+.header .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    color: #8a4a4a;
+}
+
+.nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+    transition: 0.2s;
+}
+
+.nav ul li a:hover {
+    color: #8a4a4a;
+}
+
+.produto-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.produto-container h1 {
+    font-size: 2.2rem;
+    color: #3b2f2f;
+    margin-bottom: 20px;
+}
+
+.produto-container img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.produto-container p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 25px;
+    padding: 0 10px;
+}
+
+/* Botão Agendar */
+.btn-agendar {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #df8f8f;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: .3s ease;
+}
+
+.btn-agendar:hover {
+    background-color: #c67171;
+    transform: translateY(-2px);
+}
+
+/* Responsivo */
+@media (max-width: 500px) {
+    .produto-container img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .produto-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .produto-container p {
+        font-size: 1rem;
+    }
+}
+
+.footer {
+    background:  #c27b7b;
+    color: #fff;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+.footer h4{
+  color: #5e2e2e;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.footer-grid {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.footer p {
+    margin-bottom: 8px;
+}
+
+.footer a {
+    text-decoration: none !important;
+}
+
+.footer .icon-img {
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+    vertical-align: middle;
+
+    filter: brightness(0) invert(1);
+}
+
+.social-icon img {
+    width: 32px;
+    margin-right: 10px;
+    transition: .2s;
+    filter: brightness(0) invert(1);
+}
+
+.social-icon img:hover {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    margin-top: 35px;
+    text-align: center;
+    border-top: 1px solid #ffffff55;
+    padding-top: 15px;
+    font-size: 0.9rem;
+}
+
