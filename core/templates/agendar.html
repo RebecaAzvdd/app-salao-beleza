@@ -1,27 +1,116 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'core/produto.css' %}">
+    <title>Agendamentos</title>
   </head>
   <body>
-    <h2>Agendar: {{ produto.nome }}</h2>
+    <header class="header">
+      <div class="container">
+        <div class="logo">
+          <h1>Salão de Beleza</h1>
+        </div>
 
-    <form method="POST">
-      {% csrf_token %} Nome:<br />
-      <input type="text" name="nome" required /><br /><br />
+        <nav class="nav">
+          <ul>
+            <li><a href="{% url 'home' %}#home">Início</a></li>
+            <li><a href="{% url 'home' %}#servicos">Serviços</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-      Telefone:<br />
-      <input type="text" name="telefone" required /><br /><br />
+     <div class="produto-container">
 
-      Data:<br />
-      <input type="date" name="data" required /><br /><br />
+      <!-- Imagem do produto -->
+      <div class="produto-imagem">
+        <img src="{{ produto.imagem.url }}" alt="{{ produto.nome }}">
+        <h1>{{ produto.nome }}</h1>
+        <p class="produto-descricao">{{ produto.descricao }}</p>
+        <p class="produto-valor">Valor: R$ {{ produto.preco }}</p>
+      </div>
 
-      Hora:<br />
-      <input type="time" name="hora" required /><br /><br />
+      <!-- Info + Formulário -->
+     
 
-      <button type="submit">Enviar para WhatsApp</button>
-    </form>
+        <!-- Formulário -->
+        <form method="POST" class="form-agendar">
+          {% csrf_token %}
+
+          <label>Nome:</label>
+          <input type="text" name="nome" required />
+
+          <label>Telefone:</label>
+          <input type="text" name="telefone" required />
+
+          <label>Data:</label>
+          <input type="date" name="data" required />
+
+          <label>Hora:</label>
+          <input type="time" name="hora" required />
+
+          <button type="submit" class="btn-agendar">
+            Enviar para WhatsApp
+          </button>
+        </form>
+      </div>
+ 
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contato">
+      <div class="footer-grid">
+
+        <div>
+          <h4>Salão de Beleza</h4>
+          <p>Seu lugar de transformação e beleza</p>
+        </div>
+
+        <div>
+          <h4>Contato</h4>
+          <p>
+            <img src="{% static 'img/telefone.png' %}" class="icon-img" alt="Telefone">
+            (81) 91234-5678
+          </p>
+          <p>
+            <img src="{% static 'img/email.png' %}" class="icon-img" alt="E-mail">
+            contato@salao.com.br
+          </p>
+          <p>
+            <img src="{% static 'img/localizacao.png' %}" class="icon-img" alt="Endereço">
+            Rua da Beleza, 123
+          </p>
+        </div>
+
+        <div>
+          <h4>Horários</h4>
+          <p>Seg–Sex: 9h–19h</p>
+          <p>Sábado: 9h–17h</p>
+          <p>Domingo: Fechado</p>
+        </div>
+
+        <div>
+          <h4>Redes Sociais</h4>
+          <a href="#" class="social-icon">
+            <img src="{% static 'img/instagram.png' %}" class="icon-img" alt="Instagram">
+          </a>
+          <a href="#" class="social-icon">
+            <img src="{% static 'img/facebook.png' %}" class="icon-img" alt="Facebook">
+          </a>
+          <a href="#" class="social-icon">
+            <img src="{% static 'img/whatsapp.png' %}" class="icon-img" alt="WhatsApp">
+          </a>
+        </div>
+
+      </div>
+
+      <p class="footer-bottom">
+        &copy; 2025 Salão de Beleza. Todos os direitos reservados.
+      </p>
+    </footer>
+
   </body>
 </html>
